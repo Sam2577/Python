@@ -2,15 +2,12 @@ import requests, openpyxl, sys
 from bs4 import BeautifulSoup
 from lxml import html
 
-login_url = "https://projects.markit.com/login.jsp"
-url = 'https://jira.markit.com/browse/BRS-254'
+login_url = "https:// [ login url here ]"
+url = 'https:// [ticket to scrape url here]'
 
 all_tickets = []
 all_urls = []
 THE_FILE = 'C:\\users\\sam.walsh\\desktop\\ALL_TICKETS.xlsx'
-
-wb = openpyxl.load_workbook(THE_FILE)
-sheet = wb['Sheet1']
 
 # Ticket class for representing each ticket scraped as a Ticket object
 class Ticket:
