@@ -27,7 +27,7 @@ class Game2048:
             self.grid[loc[0]][loc[1]] = tile[0]
 
     def rotate(self, grid):
-        newgrid = [list(reversed(list(item))) for item in zip(*grid)] #<-----!!!
+        newgrid = [list(reversed(list(item))) for item in zip(*grid)]
         return newgrid
 
     def merge_row_left(self, row):
@@ -36,7 +36,7 @@ class Game2048:
     
         i = 0
         while i < (len(newrow) - 1):
-            if newrow[i] == newrow[i + 1]: #<-------------------problem here
+            if newrow[i] == newrow[i + 1]: 
                 newrow[i] = newrow[i] * 2
                 del newrow[i + 1]
             i += 1
@@ -65,7 +65,7 @@ class Game2048:
             self.grid = self.rotate(self.rotate(self.rotate(self.shift(self.rotate(self.grid)))))
         elif d == 'r':
             self.grid = self.rotate(self.rotate(self.shift(self.rotate(self.rotate(self.grid)))))
-        self.set_samples(1) #<----this is overwriting other tiles!!!!
+        self.set_samples(1) 
         print(self)
                  
     def __str__(self):
